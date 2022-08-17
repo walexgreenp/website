@@ -80,8 +80,8 @@ span{
 }
 
 .images{
-    width: 40%;
-    height: 40%;
+    width: 20%;
+    height: 20%;
     position: absolute;
     bottom: 10px;
     right: 0px;
@@ -96,13 +96,22 @@ span{
     transition: bottom 1s, left 1s;
 }
 
-.images:hover .shape{
-    bottom: 40px;
+.images:hover .htmli{
+    bottom: 100%;
 
 }
 
-.images:hover .girl{
-    left: 30%
+.images:hover .cssi{
+    left: 5%;
+}
+
+.images:hover .javai{
+    bottom: 80%;
+    left: 10%
+}
+
+.images:hover .cppi{
+    bottom: 200%
 }
 
 /*Picture of me*/
