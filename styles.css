@@ -11,7 +11,7 @@
     height: 100vh;
 
     /*background image */
-    background-image: url(Ocean.jpeg);
+    background-image: url(images/Ocean.jpeg);
     background-size: cover;
     background-position: center;
 }
@@ -162,7 +162,7 @@ span{
     height: 100vh;
 
     /*background image */
-    background-image: url(ocean2.jpeg);
+    background-image: url(images/ocean2.jpeg);
     background-size: cover;
     background-position: center;
 }
@@ -205,7 +205,7 @@ span{
     height: 100vh;
 
     /*background image */
-    background-image: url(creek.jpeg);
+    background-image: url(images/creek.jpeg);
     background-size: cover;
     background-position: center;
 }
