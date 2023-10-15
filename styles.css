@@ -79,6 +79,18 @@ span{
     border-radius: 5px;
 }
 
+/* style for github button */
+.descr c{
+    background: #d58b42c4;
+    padding: 5px 9px;
+    text-decoration: none;
+    font-weight: normal;
+    color: #fff;
+    display: inline-block;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
 .images{
     width: 20%;
     height: 20%;
@@ -192,6 +204,17 @@ span{
     color: #fff;
     display: inline-block;
     margin: 30px 0;
+    border-radius: 5px;
+}
+
+.project-descr c{
+    background: #d58b42c4;
+    padding: 5px 9px;
+    text-decoration: none;
+    font-weight: normal;
+    color: #fff;
+    display: inline-block;
+    margin: 5px 0;
     border-radius: 5px;
 }
 
