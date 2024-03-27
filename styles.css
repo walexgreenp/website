@@ -30,8 +30,9 @@ body {
 /* Updated CSS for navigation bar */
 nav {
     background-color: #212121;
-    padding: 8px 0;
-    font-weight: 800;
+    padding: 10px 0;
+    font-size: large;
+    font-weight: 300;
 }
 
 nav ul {
@@ -45,11 +46,11 @@ nav ul li {
 
 nav ul li a {
     display: inline-block;
-    padding: 8px 40px;
+    padding: 8px 50px;
     color: #fff;
     text-decoration: none;
     transition: background-color 0.3s, border-left 0.3s; /* Added transition for better visual effect */
-    border-left: 1px solid #fff; /* Added border between menu items */
+    border-left: 2px solid #fff; /* Added border between menu items */
 }
 
 nav ul li:first-child a {
@@ -82,6 +83,7 @@ nav ul li a:hover {
         border-bottom: none; /* Remove left border from the first menu item */
     }
 }
+
 /* margin for name n stuff */
 .descr {
     margin-left: 3%;
@@ -93,7 +95,6 @@ nav ul li a:hover {
     border-radius: 10px; /* Add border radius for rounded corners */
     z-index: 1; /* Ensure the text container is above the background image */
 }
-
 
 .descr h1{
     font-size: 50px;
@@ -114,7 +115,7 @@ span{
     font-weight: 400;
     line-height: 25px;
     font-size:larger;
-    max-width: 90%; /* Adjust the maximum width as needed */
+    max-width: 100%; /* Adjust the maximum width as needed */
 }
 
 .descr d {
@@ -239,31 +240,60 @@ span{
     box-shadow: inset 200px 0 0 0 rgb(33, 89, 255);
 }
 
-.project-descr{
-    margin-left: 8%;
+
+
+
+
+
+
+
+.project-descr {
+    margin-left: 3%;
+    margin-right: 3%;
     margin-top: 1%;
+    position: relative; /* Add position relative for z-index */
+    padding: 20px; /* Add padding to create space for the backdrop */
+    background-color: rgba(0, 0, 0, 0.25); /* Add semi-transparent background */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    z-index: 1; /* Ensure the text container is above the background image */
 }
+
+.project-descr h1{
+    font-size: 50px;
+    color: #212121;
+    margin-bottom: 20px;
+}
+
+.project-descr h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
 
 .project-descr p{
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px; 
     color: white;
+    font-weight: 400;
     line-height: 25px;
-    font-size:x-large;
+    font-size:larger;
+    max-width: 100%; /* Adjust the maximum width as needed */
 }
 
 
-
-
-
-
-.hero2{
-    position: relative;
+.background-image-projects {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
-
-    /*background image */
+    height: 100%;
     background-image: url(images/ocean2.jpeg);
     background-size: cover;
     background-position: center;
+    z-index: -1;    
+    filter: brightness(1.4) blur(2px);
 }
 
 .b2{
@@ -294,15 +324,36 @@ span{
     border-radius: 5px;
 }
 
-.project-descr c{
-    background: #d58b42c4;
-    padding: 5px 9px;
+/* style for main text" */
+.project-descr p{
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px; 
+    color: white;
+    font-weight: 400;
+    line-height: 25px;
+    font-size:larger;
+    max-width: 100%; /* Adjust the maximum width as needed */
+}
+
+.project-descr c {
+    background-color: #000000;
+    border: none;
+    color: white;
+    text-align: center;
     text-decoration: none;
-    font-weight: normal;
-    color: #fff;
     display: inline-block;
-    margin: 5px 0;
-    border-radius: 5px;
+    font-size: 16px;
+    padding: 6px 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.project-descr c:hover {
+    background-color: #ff8934; 
 }
 
 
@@ -310,16 +361,20 @@ span{
 
 
 
-.hero3{
-    position: relative;
-    width: 100%;
-    height: 100vh;
 
-    /*background image */
-    background-image: url(images/creek.jpeg);
+.background-image-contact {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/creekLarge.jpeg);
+    filter: brightness(1.1) blur(2px);
     background-size: cover;
     background-position: center;
+    z-index: -1;
 }
+
 
 .b3{
     width: 200px;
@@ -338,25 +393,59 @@ span{
     box-shadow: inset 200px 0 0 0 rgb(33, 159, 255);
 }
 
-.contact-descr a{
-    background: #212121;
-    padding: 10px 18px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    display: inline-block;
-    margin: 30px 0;
-    border-radius: 5px;
+
+.contact-descr {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1%;
+    position: relative; /* Add position relative for z-index */
+    padding: 20px; /* Add padding to create space for the backdrop */
+    background-color: rgba(0, 0, 0, 0.25); /* Add semi-transparent background */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    z-index: 1; /* Ensure the text container is above the background image */
 }
 
-.contact-descr{
-    margin-left: 8%;
-    margin-top: 1%;
+.contact-descr h1{
+    font-size: 50px;
+    color: #212121;
+    margin-bottom: 20px;
 }
+
+.contact-descr h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
 
 .contact-descr p{
-    color: rgb(255, 255, 255);
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px; 
+    color: white;
+    font-weight: 400;
     line-height: 25px;
-    font-size:x-large;
+    font-size:larger;
+    max-width: 100%; /* Adjust the maximum width as needed */
 }
 
+.contact-descr a {
+    background-color: #2471003e;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 6px 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.contact-descr a:hover {
+    background-color: #247100; 
+}
