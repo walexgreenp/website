@@ -1,60 +1,97 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
-/* main website */
-.hero{
-    position: relative;
-    width: 100%;
-    height: 100vh;
+body {
+    font-family: sans-serif;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .background-image {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-image: url(images/ocean.jpeg);
-    filter: blur(2px); /* Adjust the blur amount as needed */
+    filter: blur(2px);
     background-size: cover;
     background-position: center;
-    z-index: -1; /* Ensure the background image is behind the content */
+    z-index: -1;
 }
 
-nav{
-    display: flex;
-    width: 84%;
-    margin: auto;
-    padding: 20px 0;
-    align-items: center;
-    justify-content: space-between;
+.content {
+    padding-top: 1vh; /* Adjust based on the height of your navigation */
 }
 
-nav ul li{
-    display: inline-block;
+
+/* Updated CSS for navigation bar */
+nav {
+    background-color: #212121;
+    padding: 8px 0;
+    font-weight: 800;
+}
+
+nav ul {
     list-style: none;
-    margin: 10px 20px;
+    text-align: center;
 }
 
-/*color of text makes normal */
-nav ul li a{
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 8px 40px;
+    color: #fff;
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
+    transition: background-color 0.3s, border-left 0.3s; /* Added transition for better visual effect */
+    border-left: 1px solid #fff; /* Added border between menu items */
 }
 
-/* hover color*/
-nav ul li a:hover{
-    color: red;
+nav ul li:first-child a {
+    border-left: none; /* Remove left border from the first menu item */
 }
 
+nav ul li a:hover {
+    background-color: #555555;
+}
+
+/* Responsive design for navigation */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 1px;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #fff;
+        border-left: none; /* Remove left border for mobile view */
+    }
+    nav ul li:last-child a {
+        border-bottom: none; /* Remove left border from the first menu item */
+    }
+}
 /* margin for name n stuff */
-.descr{
-    margin-left: 4%;
+.descr {
+    margin-left: 3%;
+    margin-right: 3%;
     margin-top: 1%;
+    position: relative; /* Add position relative for z-index */
+    padding: 20px; /* Add padding to create space for the backdrop */
+    background-color: rgba(0, 0, 0, 0.2); /* Add semi-transparent background */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    z-index: 1; /* Ensure the text container is above the background image */
 }
 
 
@@ -77,14 +114,13 @@ span{
     font-weight: 400;
     line-height: 25px;
     font-size:larger;
-    max-width: 80%; /* Adjust the maximum width as needed */
+    max-width: 90%; /* Adjust the maximum width as needed */
 }
 
-.descr a {
-    background-color: #000a49;
+.descr d {
+    background-color: #000000;
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -97,8 +133,8 @@ span{
     font-weight: bold;
 }
 
-.descr a:hover {
-    background-color: #000000; 
+.descr d:hover {
+    background-color: #3478ff; 
 }
 
 /* style for github button */
@@ -113,79 +149,75 @@ span{
     border-radius: 5px;
 }
 
-.images{
-    width: auto;
-    height: 13%;
-    position: relative;
-    bottom: 100px;
-    left: 30%;
+.images {
+    margin-top: 5px; /* Adjust spacing as needed */
+    text-align: center;
+    padding-bottom: 50px; /* Add padding to the bottom of the container */
+
 }
 
-.images img{
-    height: 100%;
+.language {
+    display: inline-block;
+    margin: 0 10px; /* Adjust spacing between languages */
+    transition: transform 0.6s; /* Add transition for smooth hover effect */
+}
+
+.language:hover {
+    transform: scale(1.025); /* Scale the language container on hover */
+}
+
+.language img {
+    width: 50px; /* Adjust initial size of the images */
+    height: auto;
+}
+
+.language p {
+    margin: 5px 0 0; /* Adjust spacing between image and text */
+    color: #fff; /* Adjust color of the language name */
+    font-weight: bold;
+    font-size: 14px; /* Adjust font size of the language name */
+}
+
+.language {
+    display: inline-block;
+    margin: 0 10px; /* Adjust spacing between languages */
+    position: relative; /* Add position relative for progress bar positioning */
+    transition: transform 0.3s; /* Add transition for smooth hover effect */
+}
+
+.language img {
+    width: 50px; /* Adjust initial size of the images */
+    height: auto;
+}
+
+.language p {
+    margin: 5px 0 0; /* Adjust spacing between image and text */
+    color: #fff; /* Adjust color of the language name */
+    font-size: 14px; /* Adjust font size of the language name */
+}
+
+.progress {
+    width: 100%; /* Set width to match the language container */
+    height: 5px; /* Adjust height of the progress bar */
+    background-color: #555; /* Adjust background color of the progress bar */
     position: absolute;
-    /* left: 100%; */
-    bottom: 0;
-    transform: translateX(-50%);
-    transition: bottom 1s, left 1s;
+    bottom: -10px; /* Position the progress bar beneath the language */
+    left: 0;
 }
 
-.images .htmli{
-    left: -110px;
-    bottom: -100px
-}
-
-.images .cssi{
-    left: 0px;
-    bottom: -100px
-
-}
-
-.images .javai{
-    left: 220px;
-    bottom: -100px
-
-}
-
-.images .cppi{
-    left: 330px;
-    bottom: -100px
-
-}
-
-.images .pythoni{
-    left: 440px;
-    bottom: -100px
-
-}
-
-.images:hover .htmli{
-    bottom: 10%;
-}
-
-.images:hover .cssi{
-    bottom: 10%;
-}
-
-.images:hover .javai{
-    bottom: 10%;
-}
-
-.images:hover .cppi{
-    bottom: 10%
-}
-
-.images:hover .pythoni{
-    bottom: 10%
+.progress-bar {
+    height: 100%;
+    background-color: #f00; /* Adjust color of the progress bar */
 }
 
 /*Picture of me*/
 .portrait {
     width: 20%;
-    height: 20%;
+    max-width: 200px; /* Set a maximum width to prevent it from getting too large */
+    min-width: 150px;
+    height: auto;
     position: relative;
-    border-radius: 30px; /* Adjust the value to change the roundness */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Adjust the values to change the shadow */
+    border-radius: 20px; /* Adjust the value to change the roundness */
 }
 
 /*top buttons animation */
@@ -272,6 +304,7 @@ span{
     margin: 5px 0;
     border-radius: 5px;
 }
+
 
 
 
