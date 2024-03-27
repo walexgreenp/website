@@ -1,52 +1,99 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
-/* main website */
-.hero{
-    position: relative;
-    width: 100%;
-    height: 100vh;
+body {
+    font-family: sans-serif;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
 
-    /*background image */
-    background-image: url(images/Ocean.jpeg);
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/ocean.jpeg);
+    filter: blur(2px);
     background-size: cover;
     background-position: center;
+    z-index: -1;
 }
 
-nav{
-    display: flex;
-    width: 84%;
-    margin: auto;
-    padding: 20px 0;
-    align-items: center;
-    justify-content: space-between;
+.content {
+    padding-top: 1vh; /* Adjust based on the height of your navigation */
 }
 
-nav ul li{
-    display: inline-block;
+
+/* Updated CSS for navigation bar */
+nav {
+    background-color: #212121;
+    padding: 10px 0;
+    font-size: large;
+    font-weight: 300;
+}
+
+nav ul {
     list-style: none;
-    margin: 10px 20px;
+    text-align: center;
 }
 
-/*color of text makes normal */
-nav ul li a{
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 8px 50px;
+    color: #fff;
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
+    transition: background-color 0.3s, border-left 0.3s; /* Added transition for better visual effect */
+    border-left: 2px solid #fff; /* Added border between menu items */
 }
 
-/* hover color*/
-nav ul li a:hover{
-    color: red;
+nav ul li:first-child a {
+    border-left: none; /* Remove left border from the first menu item */
+}
+
+nav ul li a:hover {
+    background-color: #555555;
+}
+
+/* Responsive design for navigation */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 1px;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #fff;
+        border-left: none; /* Remove left border for mobile view */
+    }
+    nav ul li:last-child a {
+        border-bottom: none; /* Remove left border from the first menu item */
+    }
 }
 
 /* margin for name n stuff */
-.descr{
-    margin-left: 8%;
+.descr {
+    margin-left: 3%;
+    margin-right: 3%;
     margin-top: 1%;
+    position: relative; /* Add position relative for z-index */
+    padding: 20px; /* Add padding to create space for the backdrop */
+    background-color: rgba(0, 0, 0, 0.2); /* Add semi-transparent background */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    z-index: 1; /* Ensure the text container is above the background image */
 }
 
 .descr h1{
@@ -62,21 +109,33 @@ span{
 
 /* style for "Im a computer sicnece.." */
 .descr p{
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px; 
     color: white;
+    font-weight: 400;
     line-height: 25px;
     font-size:larger;
+    max-width: 100%; /* Adjust the maximum width as needed */
 }
 
-/*style for download resume button */
-.descr a{
-    background: #212121;
-    padding: 10px 18px;
+.descr d {
+    background-color: #000000;
+    border: none;
+    color: white;
+    text-align: center;
     text-decoration: none;
-    font-weight: bold;
-    color: #fff;
     display: inline-block;
+    font-size: 16px;
     margin: 30px 0;
-    border-radius: 5px;
+    padding: 10px 18px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.descr d:hover {
+    background-color: #3478ff; 
 }
 
 /* style for github button */
@@ -91,48 +150,76 @@ span{
     border-radius: 5px;
 }
 
-.images{
-    width: 20%;
-    height: 20%;
-    position: absolute;
-    bottom: 10px;
-    right: 0px;
+.images {
+    margin-top: 5px; /* Adjust spacing as needed */
+    text-align: center;
+    padding-bottom: 50px; /* Add padding to the bottom of the container */
+
 }
 
-.images img{
+.language {
+    display: inline-block;
+    margin: 0 10px; /* Adjust spacing between languages */
+    transition: transform 0.6s; /* Add transition for smooth hover effect */
+}
+
+.language:hover {
+    transform: scale(1.025); /* Scale the language container on hover */
+}
+
+.language img {
+    width: 50px; /* Adjust initial size of the images */
+    height: auto;
+}
+
+.language p {
+    margin: 5px 0 0; /* Adjust spacing between image and text */
+    color: #fff; /* Adjust color of the language name */
+    font-weight: bold;
+    font-size: 14px; /* Adjust font size of the language name */
+}
+
+.language {
+    display: inline-block;
+    margin: 0 10px; /* Adjust spacing between languages */
+    position: relative; /* Add position relative for progress bar positioning */
+    transition: transform 0.3s; /* Add transition for smooth hover effect */
+}
+
+.language img {
+    width: 50px; /* Adjust initial size of the images */
+    height: auto;
+}
+
+.language p {
+    margin: 5px 0 0; /* Adjust spacing between image and text */
+    color: #fff; /* Adjust color of the language name */
+    font-size: 14px; /* Adjust font size of the language name */
+}
+
+.progress {
+    width: 100%; /* Set width to match the language container */
+    height: 5px; /* Adjust height of the progress bar */
+    background-color: #555; /* Adjust background color of the progress bar */
+    position: absolute;
+    bottom: -10px; /* Position the progress bar beneath the language */
+    left: 0;
+}
+
+.progress-bar {
     height: 100%;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    transition: bottom 1s, left 1s;
-}
-
-.images:hover .htmli{
-    bottom: 100%;
-
-}
-
-.images:hover .cssi{
-    left: 5%;
-}
-
-.images:hover .javai{
-    bottom: 80%;
-    left: 10%
-}
-
-.images:hover .cppi{
-    bottom: 200%
+    background-color: #f00; /* Adjust color of the progress bar */
 }
 
 /*Picture of me*/
 .portrait {
     width: 20%;
-    height: 20%;
+    max-width: 200px; /* Set a maximum width to prevent it from getting too large */
+    min-width: 150px;
+    height: auto;
     position: relative;
+    border-radius: 20px; /* Adjust the value to change the roundness */
 }
-
 
 /*top buttons animation */
 .b1{
@@ -146,37 +233,67 @@ span{
     transition: ease-out 0.3s;
     font-size: 2rem;
     outline: none;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 .b1:hover {
     box-shadow: inset 200px 0 0 0 rgb(33, 89, 255);
 }
 
-.project-descr{
-    margin-left: 8%;
+
+
+
+
+
+
+
+.project-descr {
+    margin-left: 3%;
+    margin-right: 3%;
     margin-top: 1%;
+    position: relative; /* Add position relative for z-index */
+    padding: 20px; /* Add padding to create space for the backdrop */
+    background-color: rgba(0, 0, 0, 0.25); /* Add semi-transparent background */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    z-index: 1; /* Ensure the text container is above the background image */
 }
+
+.project-descr h1{
+    font-size: 50px;
+    color: #212121;
+    margin-bottom: 20px;
+}
+
+.project-descr h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
 
 .project-descr p{
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px; 
     color: white;
+    font-weight: 400;
     line-height: 25px;
-    font-size:x-large;
+    font-size:larger;
+    max-width: 100%; /* Adjust the maximum width as needed */
 }
 
 
-
-
-
-
-.hero2{
-    position: relative;
+.background-image-projects {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
-
-    /*background image */
+    height: 100%;
     background-image: url(images/ocean2.jpeg);
     background-size: cover;
     background-position: center;
+    z-index: -1;    
+    filter: brightness(1.4) blur(2px);
 }
 
 .b2{
@@ -207,31 +324,57 @@ span{
     border-radius: 5px;
 }
 
-.project-descr c{
-    background: #d58b42c4;
-    padding: 5px 9px;
+/* style for main text" */
+.project-descr p{
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px; 
+    color: white;
+    font-weight: 400;
+    line-height: 25px;
+    font-size:larger;
+    max-width: 100%; /* Adjust the maximum width as needed */
+}
+
+.project-descr c {
+    background-color: #000000;
+    border: none;
+    color: white;
+    text-align: center;
     text-decoration: none;
-    font-weight: normal;
-    color: #fff;
     display: inline-block;
-    margin: 5px 0;
-    border-radius: 5px;
+    font-size: 16px;
+    padding: 6px 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.project-descr c:hover {
+    background-color: #ff8934; 
 }
 
 
 
 
 
-.hero3{
-    position: relative;
-    width: 100%;
-    height: 100vh;
 
-    /*background image */
-    background-image: url(images/creek.jpeg);
+
+.background-image-contact {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/creekLarge.jpeg);
+    filter: brightness(1.1) blur(2px);
     background-size: cover;
     background-position: center;
+    z-index: -1;
 }
+
 
 .b3{
     width: 200px;
@@ -250,24 +393,59 @@ span{
     box-shadow: inset 200px 0 0 0 rgb(33, 159, 255);
 }
 
-.contact-descr a{
-    background: #212121;
-    padding: 10px 18px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    display: inline-block;
-    margin: 30px 0;
-    border-radius: 5px;
+
+.contact-descr {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1%;
+    position: relative; /* Add position relative for z-index */
+    padding: 20px; /* Add padding to create space for the backdrop */
+    background-color: rgba(0, 0, 0, 0.25); /* Add semi-transparent background */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    z-index: 1; /* Ensure the text container is above the background image */
 }
 
-.contact-descr{
-    margin-left: 8%;
-    margin-top: 1%;
+.contact-descr h1{
+    font-size: 50px;
+    color: #212121;
+    margin-bottom: 20px;
 }
+
+.contact-descr h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
 
 .contact-descr p{
-    color: rgb(255, 255, 255);
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px; 
+    color: white;
+    font-weight: 400;
     line-height: 25px;
-    font-size:x-large;
+    font-size:larger;
+    max-width: 100%; /* Adjust the maximum width as needed */
+}
+
+.contact-descr a {
+    background-color: #2471003e;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 6px 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.contact-descr a:hover {
+    background-color: #247100; 
 }
